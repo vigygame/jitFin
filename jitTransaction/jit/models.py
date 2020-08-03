@@ -1,0 +1,22 @@
+from django.db import models
+
+
+# Create your models here.
+class Jit(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+
+#  CSV file consists of: 
+# i. Transaction Date - YYYY-MM-DD 
+# ii. Description - string min 5 chars and max 75 chars 
+# iii. Category 
+# iv. Amount 
+class Transaction(models.Model):
+    transactionDate = models.DateField()
+    description = models.CharField(max_length=75)
+    category = models.IntegerField()
+    amount = models.FloatField()
+
+class FileUpload(models.Model):
+    created = models.DateTimeField(auto_now_add=True)
+    datafile = models.FileField()
