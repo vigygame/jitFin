@@ -12,7 +12,7 @@ class Jit(models.Model):
 # iii. Category 
 # iv. Amount 
 class Transaction(models.Model):
-   # transactionID =models.CharField(max_length=75,unique=True)
+    #transactionID =models.CharField(max_length=75)
     transactionDate = models.DateField()
     description = models.CharField(max_length=75)
     category = models.IntegerField()
