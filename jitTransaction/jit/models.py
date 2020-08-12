@@ -12,11 +12,17 @@ class Jit(models.Model):
 # iii. Category 
 # iv. Amount 
 class Transaction(models.Model):
-    #transactionID =models.CharField(max_length=75)
+    transactionID =models.CharField(max_length=75)
     transactionDate = models.DateField()
     description = models.CharField(max_length=75)
     category = models.IntegerField()
     amount = models.FloatField()
+    FinStatus = models.CharField(max_length=45)
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+class FailedTransaction(models.Model):
+    details=models.TextField()
+    uploaded_at = models.DateTimeField(auto_now_add=True)
 
 # class FileUpload(models.Model):
 #     created = models.DateTimeField(auto_now_add=True)

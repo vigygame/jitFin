@@ -5,10 +5,13 @@
 
 ###Django model migrations and run server 
 pipenv shell
+
+
 \jitFin\jitTransaction> python manage.py makemigrations jit
 \jitFin\jitTransaction> python manage.py migrate
 \jitFin\jitTransaction> python manage.py runserver
 
+### to clear all tables ###\jitFin\jitTransaction> python manage.py migrate jit zero
 
 reach react page on localhost:8000/
 

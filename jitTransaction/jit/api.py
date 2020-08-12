@@ -1,6 +1,6 @@
-from jit.models import Jit,Transaction,TransactionFile
+from jit.models import Jit,Transaction,TransactionFile,FailedTransaction
 from rest_framework import viewsets,permissions,serializers
-from jit.serializers import JitSerializer,TransactionSerializer,TransactionFileSerializer
+from jit.serializers import JitSerializer,TransactionSerializer,TransactionFileSerializer,FailedTransactionSerializer
 
 
 
@@ -24,4 +24,11 @@ class TransactionFile(viewsets.ModelViewSet):
         permissions.AllowAny
     ]
     serializer_class= TransactionFileSerializer
+
+class JitFailedTransaction(viewsets.ModelViewSet):
+    queryset = FailedTransaction.objects.all()
+    permission_classes=[
+        permissions.AllowAny
+    ]
+    serializer_class= FailedTransactionSerializer
 

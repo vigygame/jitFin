@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from  jit.models import Jit,Transaction,TransactionFile
+from  jit.models import Jit,Transaction,TransactionFile,FailedTransaction
 
 
 
@@ -11,6 +11,11 @@ class JitSerializer(serializers.ModelSerializer):
 class TransactionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Transaction
+        fields= '__all__'
+
+class FailedTransactionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FailedTransaction
         fields= '__all__'
 
 

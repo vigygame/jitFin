@@ -1,0 +1,5 @@
+transactionID,transactionDate,description,category,amount,FinStatus
+23hisk,2019-07-29,testingsale,1,1021.12,FinStatus
+23hsdisk,2019-07-29,testingsale,2,1021.12,FinStatus
+23hisdks,2019-07-29,testingsale,1,1021.12,FinStatus
+23hssisk,2019-07-29,testingsale,2,1021.12,FinStatus
