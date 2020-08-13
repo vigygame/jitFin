@@ -1,11 +1,16 @@
 from rest_framework import serializers
-from  jit.models import Jit,Transaction,TransactionFile,FailedTransaction
+from  jit.models import Jit,Transaction,TransactionFile,FailedTransaction,Cards
 
 
 
 class JitSerializer(serializers.ModelSerializer):
     class Meta:
         model = Jit
+        fields ='__all__'
+
+class CardsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Cards
         fields ='__all__'
 
 class TransactionSerializer(serializers.ModelSerializer):

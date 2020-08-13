@@ -1,5 +1,5 @@
 from rest_framework import routers
-from jit.api import JitViewSet,JitTransaction,TransactionFile,JitFailedTransaction
+from jit.api import JitViewSet,JitTransaction,TransactionFile,JitFailedTransaction,CardsViewSet
 from django.urls import path
 from django.conf.urls import url
 from django.contrib import admin
@@ -13,6 +13,8 @@ router = routers.DefaultRouter()
 router.register('api/jit',JitViewSet,'app')
 router.register('api/trans',JitTransaction,'JitTransaction')
 router.register('api/files',TransactionFile,'fileupload')
+router.register('api/cards',CardsViewSet,'cards')
+
 router.register('api/filedupload',JitFailedTransaction,'filedupload')
 
 

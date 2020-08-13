@@ -1,6 +1,6 @@
-from jit.models import Jit,Transaction,TransactionFile,FailedTransaction
+from jit.models import Jit,Transaction,TransactionFile,FailedTransaction,Cards
 from rest_framework import viewsets,permissions,serializers
-from jit.serializers import JitSerializer,TransactionSerializer,TransactionFileSerializer,FailedTransactionSerializer
+from jit.serializers import JitSerializer,TransactionSerializer,TransactionFileSerializer,FailedTransactionSerializer,CardsSerializer
 
 
 
@@ -10,6 +10,13 @@ class JitViewSet(viewsets.ModelViewSet):
         permissions.AllowAny
     ]
     serializer_class = JitSerializer
+
+class CardsViewSet(viewsets.ModelViewSet):
+    queryset = Cards.objects.all()
+    permission_classes =[
+        permissions.AllowAny
+    ]
+    serializer_class = CardsSerializer
 
 class JitTransaction(viewsets.ModelViewSet):
     queryset = Transaction.objects.all()

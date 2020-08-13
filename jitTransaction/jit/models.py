@@ -11,8 +11,17 @@ class Jit(models.Model):
 # ii. Description - string min 5 chars and max 75 chars 
 # iii. Category 
 # iv. Amount 
+class Cards(models.Model):
+    cardNo = models.IntegerField()
+    cardType = models.IntegerField()
+    pointPerTransaction = models.FloatField()
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+
 class Transaction(models.Model):
     transactionID =models.CharField(max_length=75)
+    #card= models.ForeignKey(Cards,related_name='cars')
+    #cardNO=models.IntegerField()
     transactionDate = models.DateField()
     description = models.CharField(max_length=75)
     category = models.IntegerField()
